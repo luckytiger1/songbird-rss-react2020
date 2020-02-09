@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  .logo {
+    background-image: url(../../assets/img/logo.png);
+    width: 200px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .top-panel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    .score__container {
+      h5 {
+        font-family: 'Sriracha', cursive;
+        color: rgb(238, 62, 18);
+        font-size: 30px;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .pagination {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .page-item {
+    flex: auto;
+    text-align: center;
+  }
+  .page-link {
+    background-color: #008966;
+    border-color: #007c5d;
+    color: #fff;
+    cursor: auto;
+  }
+}
