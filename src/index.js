@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
 
-
 ReactDOM.render(
   <AppContainer>
     <App />
@@ -13,6 +12,7 @@ ReactDOM.render(
 
 if (module.hot) {
   module.hot.accept('./Components/App', () => {
+    // eslint-disable-next-line global-require
     const NextApp = require('./Components/App').default;
     ReactDOM.render(
       <AppContainer>

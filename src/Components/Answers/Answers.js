@@ -1,7 +1,11 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import birdsData from '../birds';
 import './Answers.scss';
+
+const uuidv4 = require('uuid/v4');
 
 export default class Answers extends Component {
   constructor(props) {
@@ -17,13 +21,14 @@ export default class Answers extends Component {
     const wrongAudio = new Audio(
       'http://www.orangefreesounds.com/wp-content/uploads/2014/10/Family-feud-buzzer.mp3',
     );
-    if (!this.props.win) {
-      this.props.handleTries();
+    const { win, handleTries, changeWinState, handleScore } = this.props;
+    if (!win) {
+      handleTries();
       if (audio === questionAudio) {
         e.target.classList.add('success');
         correctAudio.play();
-        this.props.changeWinState();
-        this.props.handleScore();
+        changeWinState();
+        handleScore();
       } else {
         wrongAudio.play();
         e.target.classList.add('error');
@@ -32,16 +37,17 @@ export default class Answers extends Component {
   }
 
   render() {
+    const { page, selectHandler } = this.props;
     return (
       <div className="col-md-6">
         <ul className="item-list list-group">
-          {birdsData[this.props.page].map((el, i) => {
+          {birdsData[page].map((el) => {
             return (
               <li
                 className="list-group-item"
-                key={i}
+                key={uuidv4()}
                 onClick={(e) => {
-                  this.props.selectHandler(el.id - 1);
+                  selectHandler(el.id - 1);
                   this.checkAnswer(el.audio, e);
                 }}
               >
