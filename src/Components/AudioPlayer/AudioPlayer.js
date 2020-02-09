@@ -28,6 +28,11 @@ export default class AudioPlayer extends Component {
         progress: (100 / this.player.duration) * this.player.currentTime,
       });
     });
+    this.player.addEventListener('loadedmetadata', (e) => {
+      this.setState({
+        duration: e.target.duration,
+      });
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -50,6 +55,7 @@ export default class AudioPlayer extends Component {
       this.setState({
         playing: false,
         progress: 0,
+        duration: this.player.duration,
       });
       this.player.src = birdsData[page][id].audio;
     }
@@ -77,8 +83,8 @@ export default class AudioPlayer extends Component {
       <div className="audio-player">
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio
-          ref={(reference) => {
-            this.player = reference;
+          ref={(ref) => {
+            this.player = ref;
           }}
           className="player"
           hidden
@@ -103,8 +109,8 @@ export default class AudioPlayer extends Component {
           <div className="timebar">
             <div
               className="progress"
-              ref={(reference) => {
-                this.progressBar = reference;
+              ref={(ref) => {
+                this.progressBar = ref;
               }}
               role="progressbar"
               tabIndex="0"

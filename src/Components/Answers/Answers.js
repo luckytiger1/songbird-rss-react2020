@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import birdsData from '../birds';
 import './Answers.scss';
 
-const uuidv4 = require('uuid/v4');
+// const uuidv4 = require('uuid/v4');
 
 export default class Answers extends Component {
   constructor(props) {
@@ -23,16 +23,16 @@ export default class Answers extends Component {
     );
     const { win, handleTries, changeWinState, handleScore } = this.props;
     if (!win) {
-      handleTries();
       if (audio === questionAudio) {
-        e.target.classList.add('success');
         correctAudio.play();
         changeWinState();
         handleScore();
+        e.target.classList.add('success');
       } else {
         wrongAudio.play();
         e.target.classList.add('error');
       }
+      handleTries();
     }
   }
 
@@ -45,7 +45,7 @@ export default class Answers extends Component {
             return (
               <li
                 className="list-group-item"
-                key={uuidv4()}
+                key={el.id}
                 onClick={(e) => {
                   selectHandler(el.id - 1);
                   this.checkAnswer(el.audio, e);
