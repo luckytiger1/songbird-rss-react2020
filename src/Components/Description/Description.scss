@@ -1,0 +1,18 @@
+.birds-details {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid #444;
+  width: 100%;
+  .bird-image {
+    display: block;
+    margin: 0 auto 25px;
+    width: 200px;
+    height: 155px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}
+
+.instruction span {
+  display: block;
+}
