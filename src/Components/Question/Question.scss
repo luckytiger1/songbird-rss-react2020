@@ -1,0 +1,84 @@
+.bird-question {
+  width: calc(100% - 240px);
+  margin: 10px;
+}
+.random-bird {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 25px;
+  .bird-image {
+    width: 220px;
+    height: 180px;
+    border-radius: 10px;
+    margin: 0;
+  }
+}
+.controls,
+.playback-button {
+  display: flex;
+  align-items: center;
+}
+.playback-button {
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  transition: 0.2s;
+  border: 2px solid #00bc8c;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  svg {
+    transition: 0.2s;
+    width: 18px;
+    height: 18px;
+    color: #54b1c1;
+  }
+}
+.audio-player {
+  margin: 10px 40px 8px 0;
+  width: 100%;
+  min-width: 100px;
+}
+
+.timebar {
+  position: relative;
+  flex: 1 1;
+  margin-top: 12px;
+  &-bar {
+    height: 4px;
+  }
+  &-circle {
+    background-color: rgb(65, 60, 42);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    transform: translate(-50%, calc(-50% + 2px));
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.6s ease;
+  }
+  &-time-info {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .random-bird {
+    flex-direction: column;
+    .bird-image {
+      margin: 0 auto 20px;
+    }
+  }
+  .bird-question {
+    width: 100%;
+  }
+}
