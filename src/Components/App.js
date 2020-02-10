@@ -48,7 +48,7 @@ class App extends Component {
 
   handleScore() {
     this.setState((prevState) => ({
-      score: prevState.score + (6 - prevState.try),
+      score: prevState.score + (5 - prevState.try),
     }));
   }
 
