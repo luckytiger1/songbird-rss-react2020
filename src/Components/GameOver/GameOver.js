@@ -12,7 +12,7 @@ export default function GameOver() {
         width="600"
         height="350"
         title="congratulations"
-        src="https://www.youtube.com/watch?v=1Bix44C1EzY?autoplay=1"
+        src="https://www.youtube.com/embed/1Bix44C1EzY?autoplay=1"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
