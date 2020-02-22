@@ -22,7 +22,7 @@ export default class Answers extends Component {
       'http://www.orangefreesounds.com/wp-content/uploads/2014/10/Family-feud-buzzer.mp3',
     );
     const { win, handleTries, changeWinState, handleScore } = this.props;
-    if (!win) {
+    if (!win && !e.target.classList.contains('error')) {
       if (audio === questionAudio) {
         correctAudio.play();
         changeWinState();
