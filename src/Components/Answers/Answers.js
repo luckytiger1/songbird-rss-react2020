@@ -16,10 +16,10 @@ export default class Answers extends Component {
   checkAnswer(audio, e) {
     const questionAudio = document.querySelector('audio').src;
     const correctAudio = new Audio(
-      'http://www.orangefreesounds.com/wp-content/uploads/2014/10/Correct-answer.mp3',
+      'https://freesound.org/data/previews/131/131660_2398403-lq.mp3',
     );
     const wrongAudio = new Audio(
-      'http://www.orangefreesounds.com/wp-content/uploads/2014/10/Family-feud-buzzer.mp3',
+      'https://freesound.org/data/previews/73/73581_634166-lq.mp3',
     );
     const { win, handleTries, changeWinState, handleScore } = this.props;
     if (!win && !e.target.classList.contains('error')) {
