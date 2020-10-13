@@ -1,0 +1,37 @@
+.item-list .list-group-item {
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(73, 181, 105, 0.911);
+  }
+}
+
+.li-btn {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  background-color: #444;
+}
+
+.error .li-btn {
+  background-color: #d62c1a;
+}
+.success .li-btn {
+  background-color: #00bc8c;
+}
+
+.btn {
+  width: 100%;
+  margin: 25px 15px;
+  background-color: #303030;
+  border: 1px solid #444;
+  color: #fff !important;
+  cursor: auto;
+  transition: 0.3s;
+}
+.btn-game-over {
+  margin: 0;
+}
